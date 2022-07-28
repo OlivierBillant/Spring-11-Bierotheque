@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listes des bières</title>
+</head>
+<body>
+<H1>La liste des bieres</H1>
+<ul>
+	<li th:each="biere : ${list}">
+		<span th:text="${biere.nom}" />
+		<span th:text="${biere.couleur}" />
+		<span th:text="${biere.brasserie}" />
+		<a th:href="@{/biere/del/{id}(id=${biere.idBiere})}">X</a>
+		<a th:href="@{/biere/mod/{id}(id=${biere.idBiere})}">M</a>
+	</li>
+</ul>
+<a href="/biere/add">ajout</a>
+</body>
+</html>

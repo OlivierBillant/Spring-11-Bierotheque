@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Saisie d'une biere</title>
+</head>
+<body>
+<h1>Saisie</h1>
+<form th:action="@{/biere/add}" th:object="${biere}" method="post">
+	<label for="nom">nom:</label>
+	<input type="text" th:field="*{nom}" id="nom"/>
+	<span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"/>
+	<br>
+	<label for="couleur">couleur:</label>
+	<input type="text" th:field="*{couleur}" id="couleur"/>
+	<span th:if="${#fields.hasErrors('couleur')}" th:errors="*{couleur}"/>
+	<br>
+	<label for="brasserie">brasserie:</label>
+	<input type="text" th:field="*{brasserie}" id="brasserie"/>
+	<span th:if="${#fields.hasErrors('brasserie')}" th:errors="*{brasserie}"/>
+	<br>
+	<input type="submit" value="valider"/>
+</form>
+</body>
+</html>
